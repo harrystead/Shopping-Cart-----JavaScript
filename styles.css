@@ -29,6 +29,18 @@ body {
   padding: 0;
 }
 
+#title {
+    color: rgb(151, 150, 150);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.8rem;
+}
+
+.video-smiths {
+    margin-bottom: 60px;
+    position: relative;
+    bottom:  45px;
+}
+
 .nav {
   background-color: #eae0d4;
 }
@@ -42,7 +54,7 @@ body {
   padding-top: 3rem;
   text-decoration: none;
   font-weight: bold;
-  color: rgb(102, 101, 101);
+  color: rgb(121, 120, 120);
 }
 
 .main-nav {
@@ -51,6 +63,48 @@ body {
   font-weight: lighter;
   font-family: Helvetica, Arial, sans-serif;
 }
+
+.link-media {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    margin-left: 8rem;
+    font-size: 0.9rem;
+    margin-bottom: 5rem;
+    position: relative;
+    top: -80px;
+}
+
+.link-media li {
+    margin-right: 30px;
+}
+
+.out-now {
+    font-size: 3em;
+    font-weight: lighter;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    position: relative;
+    top: -100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .container {
   text-align: center;
@@ -89,8 +143,10 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 1.5em;
+  margin-bottom: 50px;
 }
 .section-header {
+    margin-top: 30px;
   font-family: "Metal Mania";
   font-weight: normal;
   color: #333;
