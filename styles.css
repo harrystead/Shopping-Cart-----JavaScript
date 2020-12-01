@@ -334,3 +334,9 @@ body {
   background-color: white;
   height: 100px;
 }
+
+.logo-footer {
+  justify-content: center;
+  text-align: center;
+  padding-top: 12px;
+}
