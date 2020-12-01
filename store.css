@@ -22,6 +22,7 @@
     justify-content: center;
     text-decoration: none;
     list-style-type: none;
+    margin-top: 30px;
 }
 
 .nav-list a {
@@ -47,7 +48,8 @@ body {
 }
 
 .shop-item {
-    margin: 10px;
+    margin-bottom: 40px;
+    margin-right: 20px;
   }
   
   .shop-item-title {
@@ -91,6 +93,7 @@ body {
   .section-header {
       text-align: center;
       font-size: 2em;
+      margin-bottom: 30px;
   }
   
   .cart-header {
@@ -141,6 +144,10 @@ body {
     height: auto;
     border-radius: 10px;
   }
+
+  .shop-item-price {
+      font-size: 18px;
+  }
   
   .btn-danger {
     color: white;
@@ -148,6 +155,10 @@ body {
     border: none;
     border-radius: 0.3em;
     font-weight: bold;
+  }
+
+  .shop-item-button:hover {
+      cursor: pointer;
   }
   
   .btn-danger:hover {

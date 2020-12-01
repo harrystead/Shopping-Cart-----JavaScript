@@ -223,3 +223,90 @@ body {
   max-width: 19%;
 }
 
+.content-section-two {
+  background-color: #eae0d4;
+}
+
+.album-heading {
+  text-align: center;
+  padding-top: 40px;
+  font-family: "Metal Mania";
+  font-weight: normal;
+  color: #333;
+  font-size: 2.5em;
+}
+
+.shop-item-details-two{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.shop-items-two{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shop-item {
+  margin-bottom: 80px;
+  margin-right: 20px;
+  margin-top: 60px;
+}
+
+.shop-item-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.shop-item-image {
+  height: 250px;
+}
+
+.shop-item-details {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.shop-item-price {
+  flex-grow: 1;
+  color: #333;
+}
+
+.shop-item-button {
+  color: black;
+  border: 1px solid black;
+  border-radius: 0.3em;
+  font-weight: bold;
+}
+
+.shop-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section-header {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.shop-item-image:hover {
+  filter:brightness(120%);
+  cursor: pointer;
+}
+
+.shop-item-button {
+  padding: 3px;
+}
+
+.shop-item-button:hover {
+  cursor: pointer;
+}
