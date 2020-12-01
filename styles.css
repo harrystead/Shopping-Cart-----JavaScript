@@ -41,9 +41,7 @@ body {
     bottom:  45px;
 }
 
-.nav {
-  background-color: #eae0d4;
-}
+
 .nav li {
   display: inline;
   margin-right: 40px;
