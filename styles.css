@@ -74,7 +74,26 @@ body {
     font-size: 0.9rem;
     margin-bottom: 5rem;
     position: relative;
-    top: -80px;
+    top: -60px;
+}
+
+.social-list li:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.publisher {
+  position: relative;
+  top: -70px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.position-fixed {
+  position: relative;
+  top: -70px;
+  font-size: 11px;
+  margin-top: 4px;
 }
 
 .link-media li {
@@ -87,24 +106,8 @@ body {
     text-align: center;
     font-family: Helvetica, Arial, sans-serif;
     position: relative;
-    top: -100px;
+    top: -80px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .container {
   text-align: center;
@@ -115,7 +118,7 @@ body {
 
 .main-header {
   background-color: #eae0d4;
-  height: 800px;
+  height: 850px;
   margin:0;
 }
 
@@ -123,7 +126,7 @@ body {
   text-align: center;
   font-family: Helvetica, Arial, sans-serif;
   display: block;
-  font-size: 0.83em;
+  font-size: 0.7em;
   margin-block-start: 1.67em;
   margin-block-end: 1.67em;
   margin-inline-start: 0px;
@@ -131,8 +134,21 @@ body {
 }
 
 .band-name-large {
-  font-size: 3em;
+  font-size: 2.9em;
   text-align: center;
+}
+
+.social-list {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  position: relative;
+  bottom: 110px;
+}
+
+.social-list li {
+  margin-right: 8px;
+  font-size: 18px;
 }
 
 .content-section {
@@ -145,37 +161,15 @@ body {
   padding: 0 1.5em;
   margin-bottom: 50px;
 }
+
 .section-header {
-    margin-top: 30px;
+  margin-top: 40px;
   font-family: "Metal Mania";
   font-weight: normal;
   color: #333;
   text-align: center;
   font-size: 2.5em;
-}
-.main-footer {
-  background-color: #56ccf2;
-  color: white;
-  padding: 0.25em 0;
-}
-
-.main-footer-container {
-  display: flex;
-  align-items: center;
-}
-
-.main-footer-container ul {
-  flex-grow: 1;
-  text-align: end;
-}
-
-.footer-nav li {
-  padding: 0 0.5em;
-}
-
-.footer-nav img {
-  width: 30px;
-  height: 30px;
+  margin-bottom: 30px;
 }
 
 .btn {
@@ -186,15 +180,15 @@ body {
 }
 
 .btn-primary {
-  color: white;
-  background-color: #56ccf2;
+  color: black;
+  background-color:#eeff00;
   border: none;
   border-radius: 0.3em;
   font-weight: bold;
 }
 
 .btn-primary:hover {
-  background-color: #2d9cdb;
+  opacity: 0.7;
 }
 
 .tour-row {
@@ -210,10 +204,11 @@ body {
 .tour-item {
   display: inline-block;
   padding-right: 0.5em;
+  color: black;
 }
 
 .tour-date {
-  color: #555;
+  color: rgb(0, 0, 0);
   width: 11%;
   font-weight: bold;
 }
