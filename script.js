@@ -24,7 +24,7 @@ function addToCartClicked(event) {
 function addItemToCart(date, city, arena) {
   var cartRow = document.createElement('div')
   cartRow.classList.add('cart-row')
-  var cartItems = document.getElementsByClassName('cart-items')[0]
+  var cartItems = document.getElementsByClassName('sidebar')[0]
   var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
   for (var i = 0; i < cartItemNames.length; i++) {
       if (cartItemNames[i].innerText == title) {
@@ -56,7 +56,6 @@ function addItemToCart(date, city, arena) {
       <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
       </div>
       </section>`
-  
     
   cartRow.innerHTML = cartRowContents
   cartItems.append(cartRow)

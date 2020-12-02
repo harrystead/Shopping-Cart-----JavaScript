@@ -341,7 +341,7 @@ body {
   padding-top: 12px;
 }
 
-#sidebar {
+.sidebar {
   position: absolute;
   top: 53.1rem;
   right: 15px;
