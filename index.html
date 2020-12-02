@@ -8,6 +8,11 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+    src="https://kit.fontawesome.com/038b5fef1f.js"
+    crossorigin="anonymous"
+  ></script>
   </head>
   <body>
     <header class="main-header">
@@ -62,7 +67,7 @@
           <span class="tour-item tour-date">JUL 16</span>
           <span class="tour-item tour-city">DETROIT, MI</span>
           <span class="tour-item tour-arena">DTE ENERGY MUSIC THEATRE</span>
-          <button type="button" id="tour-btn" onclick="toggleSidebar(this)" class="tour-item tour-btn btn btn-primary">
+          <button type="button" id="tour-btn" class="tour-item tour-btn btn btn-primary">
             BUY TICKETS
           </button>
         </div>
@@ -70,7 +75,7 @@
           <span class="tour-item tour-date">JUL 19</span>
           <span class="tour-item tour-city">TORONTO, ON</span>
           <span class="tour-item tour-arena">BUDWEISER STAGE</span>
-          <button type="button" id="tour-btn" onclick="toggleSidebar(this)" class="tour-item tour-btn btn btn-primary toggle-btn">
+          <button type="button" id="tour-btn" class="tour-item tour-btn btn btn-primary toggle-btn">
             BUY TICKETS
           </button>
         </div>
@@ -78,7 +83,7 @@
           <span class="tour-item tour-date">JUL 22</span>
           <span class="tour-item tour-city">BRISTOW, VA</span>
           <span class="tour-item tour-arena">JIGGY LUBE LIVE</span>
-          <button type="button"  id="tour-btn" onclick="toggleSidebar(this)" class="tour-item tour-btn btn btn-primary">
+          <button type="button"  id="tour-btn" class="tour-item tour-btn btn btn-primary">
             BUY TICKETS
           </button>
         </div>
@@ -86,7 +91,7 @@
           <span class="tour-item tour-date">JUL 29</span>
           <span class="tour-item tour-city">PHOENIX, AZ</span>
           <span class="tour-item tour-arena">AK-CHIN PAVILION</span>
-          <button type="button" id="tour-btn" onclick="toggleSidebar(this)" class="tour-item tour-btn btn btn-primary">
+          <button type="button" id="tour-btn" class="tour-item tour-btn btn btn-primary">
             BUY TICKETS
           </button>
         </div>
@@ -94,7 +99,7 @@
           <span class="tour-item tour-date">AUG 2</span>
           <span class="tour-item tour-city">LAS VEGAS, NV</span>
           <span class="tour-item tour-arena">T-MOBILE ARENA</span>
-          <button type="button" id="tour-btn" onclick="toggleSidebar(this)" class="tour-item tour-btn btn btn-primary">
+          <button type="button" id="tour-btn" class="tour-item tour-btn btn btn-primary">
             BUY TICKETS
           </button>
         </div>
@@ -102,20 +107,16 @@
           <span class="tour-item tour-date">AUG 7</span>
           <span class="tour-item tour-city">CONCORD, CA</span>
           <span class="tour-item tour-arena">CONCORD PAVILION</span>
-          <button type="button"  id="tour-btn" onclick="toggleSidebar(this)" class="tour-item tour-btn btn btn-primary">
+          <button type="button"  id="tour-btn" class="tour-item tour-btn btn btn-primary">
             BUY TICKETS
           </button>
-        </div>
-        <div id="sidebar">
-        </div>  
-        <div class="list">
         </div>
       </div>
       </div>
     </section>
 
     <section class="content-section-two"> 
-        <h3 class="album-heading">ALBUMS</h3>
+        <h3 class="album-heading">CD ALBUMS</h3>
             <div class="shop-items">
                 <div class="shop-item" id="shop-item">
                     <span class="shop-item-title">The Queen is Dead</span>
@@ -144,6 +145,22 @@
         </div>
     </section>
 
+    <section class="container content-section">
+      <h2 class="section-header">CART</h2>
+      <div class="cart-row">
+          <span class="cart-item cart-header cart-column">ITEM</span>
+          <span class="cart-price cart-header cart-column">PRICE</span>
+          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+      </div>
+      <div class="cart-items">
+      </div>
+      <div class="cart-total">
+          <strong class="cart-total-title">Total</strong>
+          <span class="cart-total-price">$0</span>
+      </div>
+      <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+  </section>
+
     <footer class="main-footer">
         <div class="logo-footer">
             <img src="images\acc7537c8cdfd0f971a55e6619e04e33.png" style="height:80px; width: 80px;">
@@ -151,13 +168,7 @@
     </footer>
 
     <script src="script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/038b5fef1f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
   </body>
 </html>
