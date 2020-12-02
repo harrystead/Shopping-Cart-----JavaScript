@@ -1,4 +1,10 @@
 
+  var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+  for (var i = 0; i < quantityInputs.length; i++) {
+      var input = quantityInputs[i]
+      input.addEventListener('change', quantityChanged)
+  }
+
    var addToCartButtons = document.getElementsByClassName('tour-btn')
    for (var i = 0; i < addToCartButtons.length; i++) {
        var button = addToCartButtons[i]
@@ -7,10 +13,10 @@
 
 function addToCartClicked(event) {
   var button = event.target
-
-  var date = document.getElementsByClassName('tour-date')[0].innerText
-  var city = document.getElementsByClassName('tour-city')[0].innerText
-  var arena = document.getElementsByClassName('tour-arena')[0].innerText
+  var shopItem = button.parentElement;
+  var date = shopItem.getElementsByClassName('tour-date')[0].innerText;
+  var city = shopItem.getElementsByClassName('tour-city')[0].innerText;
+  var arena = shopItem.getElementsByClassName('tour-arena')[0].innerText;
   addItemToCart(date, city, arena);
 
 }
@@ -27,15 +33,31 @@ function addItemToCart(date, city, arena) {
       }
   }
   var cartRowContents = `
+  <section class="section-one">
+     <h2 class="section-header">CART</h2>
       <div class="cart-item cart-column">
-          <img class="cart-item-image" src="${date}" width="100" height="100">
+          <span class="cart-item-date">${date}</span>
           <span class="cart-item-title">${city}</span>
       </div>
       <span class="cart-price cart-column">${arena}</span>
+
       <div class="cart-quantity cart-column">
+          <h6>No. of Tickets: <h6>
           <input class="cart-quantity-input" type="number" value="1">
-          <button class="btn btn-danger" type="button">REMOVE</button>
-      </div>`
+      </div>
+      <div class="remove-button">
+      <button class="btn btn-danger" type="button">REMOVE</button>
+      </div>
+      <div class="total">
+      <strong class="cart-total-title">Total</strong>
+      <span class="cart-total-price">$0</span>
+      </div>
+      <div class="purchase">
+      <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+      </div>
+      </section>`
+  
+    
   cartRow.innerHTML = cartRowContents
   cartItems.append(cartRow)
   cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
