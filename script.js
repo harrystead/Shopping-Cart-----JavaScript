@@ -1,9 +1,4 @@
 
-  var quantityInputs = document.getElementsByClassName('cart-quantity-input')
-  for (var i = 0; i < quantityInputs.length; i++) {
-      var input = quantityInputs[i]
-      input.addEventListener('change', quantityChanged)
-  }
 
    var addToCartButtons = document.getElementsByClassName('tour-btn')
    for (var i = 0; i < addToCartButtons.length; i++) {
@@ -12,6 +7,8 @@
    }
 
 function addToCartClicked(event) {
+  $(".sidebar").empty();
+
   var button = event.target
   var shopItem = button.parentElement;
   var date = shopItem.getElementsByClassName('tour-date')[0].innerText;
@@ -43,14 +40,14 @@ function addItemToCart(date, city, arena) {
 
       <div class="cart-quantity cart-column">
           <h6>No. of Tickets: <h6>
-          <input class="cart-quantity-input" type="number" value="1">
+          <input class="cart-quantity-input" id="cart-quantity-input" type="number" value="1">
       </div>
       <div class="remove-button">
       <button class="btn btn-danger" type="button">REMOVE</button>
       </div>
       <div class="total">
       <strong class="cart-total-title">Total</strong>
-      <span class="cart-total-price">$0</span>
+      <span class="cart-total-price">$24.59</span>
       </div>
       <div class="purchase">
       <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
@@ -59,6 +56,14 @@ function addItemToCart(date, city, arena) {
     
   cartRow.innerHTML = cartRowContents
   cartItems.append(cartRow)
-  cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
-  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+
+  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
 }
+
+function quantityChanged () {
+  var quantity = document.getElementById("cart-quantity-input").value;
+  console.log(quantity);
+ 
+}
+
+
