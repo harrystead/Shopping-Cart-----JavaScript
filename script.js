@@ -21,7 +21,7 @@ function addToCartClicked(event) {
 function addItemToCart(date, city, arena) {
   var cartRow = document.createElement('div')
   cartRow.classList.add('cart-row')
-  var cartItems = document.getElementsByClassName('sidebar')[0]
+  var cartItems = document.getElementsByClassName('cart-items')[0]
   var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
   for (var i = 0; i < cartItemNames.length; i++) {
       if (cartItemNames[i].innerText == title) {
@@ -30,7 +30,7 @@ function addItemToCart(date, city, arena) {
       }
   }
   var cartRowContents = `
-  <section class="section-one">
+  <section class="sidebar">
      <h2 class="section-header">CART</h2>
       <div class="cart-item cart-column">
           <span class="cart-item-date">${date}</span>
@@ -43,7 +43,7 @@ function addItemToCart(date, city, arena) {
           <input class="cart-quantity-input" id="cart-quantity-input" type="number" value="1">
       </div>
       <div class="remove-button">
-      <button class="btn btn-danger" type="button">REMOVE</button>
+      <button class="btn btn-danger" type="button"><i id ="remove-btn" class="far fa-times"></i></button>
       </div>
       <div class="total">
       <strong class="cart-total-title">Total</strong>
@@ -58,6 +58,8 @@ function addItemToCart(date, city, arena) {
   cartItems.append(cartRow)
 
   cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
+  var removeBtn;
+  removeBtn = document.getElementById("remove-btn").addEventListener("click", removeCart);
 }
 
 function quantityChanged () {
@@ -70,14 +72,13 @@ function quantityChanged () {
   console.log(total);
 
   document.getElementById("cart-total-price").innerText = "£" + total;
+}
+
+function removeCart () {
+
+  $(".sidebar").remove();
 
 
-
-
-
-
-
- 
 }
 
 
