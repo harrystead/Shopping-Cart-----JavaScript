@@ -47,10 +47,10 @@ function addItemToCart(date, city, arena) {
       </div>
       <div class="total">
       <strong class="cart-total-title">Total</strong>
-      <span class="cart-total-price">$24.59</span>
+      <span class="cart-total-price" id="cart-total-price">£24.59</span>
       </div>
       <div class="purchase">
-      <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+      <button class="btn btn-primary btn-purchase" type="button">Add To Cart</button>
       </div>
       </section>`
     
@@ -62,7 +62,21 @@ function addItemToCart(date, city, arena) {
 
 function quantityChanged () {
   var quantity = document.getElementById("cart-quantity-input").value;
-  console.log(quantity);
+  var convertQuantity = parseInt(quantity);
+  console.log(convertQuantity);
+
+
+  var total = convertQuantity * 24.59;
+  console.log(total);
+
+  document.getElementById("cart-total-price").innerText = "£" + total;
+
+
+
+
+
+
+
  
 }
 
