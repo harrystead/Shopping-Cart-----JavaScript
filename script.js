@@ -47,7 +47,7 @@ function addItemToCart(date, city, arena) {
       <span class="cart-total-price" id="cart-total-price">£24.59</span>
       </div>
       <div class="purchase">
-      <button class="btn btn-primary btn-purchase" type="button">Add To Cart</button>
+      <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
       </div>
       </section>`;
 
@@ -83,23 +83,56 @@ function removeCart() {
   $(".sidebar").remove();
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-var albumButtons = document.getElementsByClassName("shop-item-button");
-for (var i = 0; i < addToCartButtons.length; i++) {
-  var button = addToCartButtons[i];
-  button.addEventListener("click", addAlbumToCart);
+var addAlbumBtns = document.getElementsByClassName("shop-item-button");
+for (var i = 0; i < addAlbumBtns.length; i++) {
+  var button = addAlbumBtns[i];
+  button.addEventListener("click", addAlbumClicked);
 }
 
-function addAlbumToCart(event) {
-  $("").empty();
+function addAlbumClicked (event) {
+  //album variables.
 
   var button = event.target;
-  var shopItem = button.parentElement;
-  var title = shopItem.getElementsByClassName("shop-item-title")[0].innerText;
-  var image = shopItem.getElementsByClassName("shop-item-image")[0];
-  var price = shopItem.getElementsByClassName("shop-item-price")[0].innerText;
+  var albumItem = button.parentElement;
+  console.log(albumItem);
+  var title = albumItem.getElementsByClassName("album-title")[0].innerText;
+  console.log(title);
+  var image = albumItem.getElementsByClassName("shop-item-image")[0].src;
+  console.log(image);
+  var price = albumItem.getElementsByClassName("shop-item-price")[0].innerText;
   addItemToCart(title, image, price);
+  console.log(price);
 }
+
+function albumCart () {
+  var albumShopCart = `
+  <section class="album-section/>
+  <h2 class="section-header">CART</h2>
+  <div class="cart-item cart-column">
+      <span class="cart-item-date">${date}</span>
+      <span class="cart-item-title">${city}</span>
+  </div>
+  <span class="cart-price cart-column">${arena}</span>
+
+  <div class="cart-quantity cart-column">
+      <h6>No. of Tickets: <h6>
+      <input class="cart-quantity-input" id="cart-quantity-input" type="number" value="1">
+  </div>
+  <div class="remove-button">
+  <button class="btn btn-danger" type="button"><i id ="remove-btn" class="far fa-times"></i></button>
+  </div>
+  <div class="total">
+  <strong class="cart-total-title">Total</strong>
+  <span class="cart-total-price" id="cart-total-price">£24.59</span>
+  </div>
+  <div class="purchase">
+  <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+  </div>
+  </section>`;
+  
+
+}
+
+
 
 
