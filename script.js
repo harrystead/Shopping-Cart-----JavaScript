@@ -77,10 +77,29 @@ function quantityChanged() {
     document.getElementById("cart-total-price").innerText = "£0";
     alert("Please enter a valid quantity");
   }
-
-
 }
 
 function removeCart() {
   $(".sidebar").remove();
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var albumButtons = document.getElementsByClassName("shop-item-button");
+for (var i = 0; i < addToCartButtons.length; i++) {
+  var button = addToCartButtons[i];
+  button.addEventListener("click", addAlbumToCart);
+}
+
+function addAlbumToCart(event) {
+  $("").empty();
+
+  var button = event.target;
+  var shopItem = button.parentElement;
+  var title = shopItem.getElementsByClassName("shop-item-title")[0].innerText;
+  var image = shopItem.getElementsByClassName("shop-item-image")[0];
+  var price = shopItem.getElementsByClassName("shop-item-price")[0].innerText;
+  addItemToCart(title, image, price);
+}
+
+
