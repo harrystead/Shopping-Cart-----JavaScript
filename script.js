@@ -83,6 +83,8 @@ function removeCart() {
   $(".sidebar").remove();
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 var addAlbumBtns = document.getElementsByClassName("shop-item-button");
 for (var i = 0; i < addAlbumBtns.length; i++) {
   var button = addAlbumBtns[i];
@@ -90,8 +92,8 @@ for (var i = 0; i < addAlbumBtns.length; i++) {
 }
 
 function addAlbumClicked (event) {
-  //album variables.
 
+  //album variables.
   var button = event.target;
   var albumItem = button.parentElement;
   console.log(albumItem);
@@ -100,19 +102,24 @@ function addAlbumClicked (event) {
   var image = albumItem.getElementsByClassName("shop-item-image")[0].src;
   console.log(image);
   var price = albumItem.getElementsByClassName("shop-item-price")[0].innerText;
-  addItemToCart(title, image, price);
+  albumCart(title, image, price);
   console.log(price);
 }
 
-function albumCart () {
+function albumCart (title, image, price) {
+  var albumItems = document.getElementsByClassName("album-items")[0];
+
+  var albumDiv = document.createElement("div");
+  albumDiv.classList.add("album-div");
+
   var albumShopCart = `
   <section class="album-section/>
   <h2 class="section-header">CART</h2>
   <div class="cart-item cart-column">
-      <span class="cart-item-date">${date}</span>
-      <span class="cart-item-title">${city}</span>
+      <span class="cart-item-date">${title}</span>
+      <img class="cart-item-title" src ="${image}" width="100" height="100">
   </div>
-  <span class="cart-price cart-column">${arena}</span>
+  <span class="cart-price cart-column">${price}</span>
 
   <div class="cart-quantity cart-column">
       <h6>No. of Tickets: <h6>
@@ -130,6 +137,9 @@ function albumCart () {
   </div>
   </section>`;
   
+  albumDiv.innerHTML = albumShopCart;
+  albumItems.append(albumDiv);
+  console.log(albumItems);
 
 }
 
