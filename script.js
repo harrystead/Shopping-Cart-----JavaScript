@@ -57,8 +57,8 @@ function addItemToCart(date, city, arena) {
   cartRow
     .getElementsByClassName("cart-quantity-input")[0]
     .addEventListener("change", quantityChanged);
-  var removeBtn;
-  removeBtn = document
+
+  var removeBtn = document
     .getElementById("remove-btn")
     .addEventListener("click", removeCart);
 }
@@ -87,11 +87,12 @@ function removeCart() {
 
 var addAlbumBtns = document.getElementsByClassName("shop-item-button");
 for (var i = 0; i < addAlbumBtns.length; i++) {
-  var button = addAlbumBtns[i];
-  button.addEventListener("click", addAlbumClicked);
+  var buttonTwo = addAlbumBtns[i];
+  buttonTwo.addEventListener("click", addAlbumClicked);
 }
 
 function addAlbumClicked (event) {
+  $(".album-section").empty();
 
   //album variables.
   var button = event.target;
@@ -101,13 +102,10 @@ function addAlbumClicked (event) {
   console.log(title);
   var image = albumItem.getElementsByClassName("shop-item-image")[0].src;
   console.log(image);
-  var price = albumItem.getElementsByClassName("shop-item-price")[0].innerText;
-  console.log(price);
-  albumCart(title, image, price);
-  console.log(price);
+  albumCart(title, image);
 }
 
-function albumCart (title, image, price) {
+function albumCart (title, image) {
   var albumItems = document.getElementsByClassName("album-items")[0];
 
   var albumDiv = document.createElement("div");
@@ -123,14 +121,14 @@ function albumCart (title, image, price) {
 
   <div class="cart-quantity cart-column">
       <h6>Qty: <h6>
-      <input class="cart-quantity-input" id="cart-quantity-input" type="number" value="1">
+      <input class="album-quantity" id="album-quantity-input" type="number" value="1">
   </div>
   <div class="remove-button">
-  <button class="btn btn-danger" type="button"><i id ="remove-btn-two" class="far fa-times"></i></button>
+  <button class="btn btn-danger" type="button"><i id="remove-btn-two" class="far fa-times"></i></button>
   </div>
   <div class="total">
   <strong class="cart-total-title">Total</strong>
-  <span class="cart-total-price" id="cart-total-price">${price}</span>
+  <span class="cart-total-price" id="album-total-price"></span>
   </div>
   <div class="purchase">
   <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
@@ -141,6 +139,41 @@ function albumCart (title, image, price) {
   albumItems.append(albumDiv);
   console.log(albumItems);
 
+
+albumDiv
+.getElementsByClassName("album-quantity")[0]
+.addEventListener("change", quantityAlbumChanged);
+
+  var removeAlbumBtn = document
+    .getElementById("remove-btn-two")
+    .addEventListener("click", removeAlbumCart);
+    console.log(removeAlbumBtn);
+
+}
+
+function quantityAlbumChanged() {
+
+  var price = document.getElementsByClassName("shop-item-price")[0].innerText;
+  console.log(price);
+
+  var quantity = document.getElementById("album-quantity-input").value;
+  console.log(quantity);
+  var albumQuantity = parseInt(quantity);
+  console.log(albumQuantity);
+
+  var total = albumQuantity * price;
+  console.log(total);
+
+  document.getElementById("album-total-price").innerText = "£" + total;
+
+  if(albumQuantity < 0){
+    document.getElementById("album-total-price").innerText = "£0";
+    alert("Please enter a valid quantity");
+  }
+}
+
+function removeAlbumCart() {
+  $(".album-section").remove();
 }
 
 
