@@ -1,33 +1,30 @@
-
-
-   var addToCartButtons = document.getElementsByClassName('tour-btn')
-   for (var i = 0; i < addToCartButtons.length; i++) {
-       var button = addToCartButtons[i]
-       button.addEventListener('click', addToCartClicked)
-   }
+var addToCartButtons = document.getElementsByClassName("tour-btn");
+for (var i = 0; i < addToCartButtons.length; i++) {
+  var button = addToCartButtons[i];
+  button.addEventListener("click", addToCartClicked);
+}
 
 function addToCartClicked(event) {
   $(".sidebar").empty();
 
-  var button = event.target
+  var button = event.target;
   var shopItem = button.parentElement;
-  var date = shopItem.getElementsByClassName('tour-date')[0].innerText;
-  var city = shopItem.getElementsByClassName('tour-city')[0].innerText;
-  var arena = shopItem.getElementsByClassName('tour-arena')[0].innerText;
+  var date = shopItem.getElementsByClassName("tour-date")[0].innerText;
+  var city = shopItem.getElementsByClassName("tour-city")[0].innerText;
+  var arena = shopItem.getElementsByClassName("tour-arena")[0].innerText;
   addItemToCart(date, city, arena);
-
 }
 
 function addItemToCart(date, city, arena) {
-  var cartRow = document.createElement('div')
-  cartRow.classList.add('cart-row')
-  var cartItems = document.getElementsByClassName('cart-items')[0]
-  var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+  var cartRow = document.createElement("div");
+  cartRow.classList.add("cart-row");
+  var cartItems = document.getElementsByClassName("cart-items")[0];
+  var cartItemNames = cartItems.getElementsByClassName("cart-item-title");
   for (var i = 0; i < cartItemNames.length; i++) {
-      if (cartItemNames[i].innerText == title) {
-          alert('This item is already added to the cart')
-          return
-      }
+    if (cartItemNames[i].innerText == title) {
+      alert("This item is already added to the cart");
+      return;
+    }
   }
   var cartRowContents = `
   <section class="sidebar">
@@ -52,33 +49,38 @@ function addItemToCart(date, city, arena) {
       <div class="purchase">
       <button class="btn btn-primary btn-purchase" type="button">Add To Cart</button>
       </div>
-      </section>`
-    
-  cartRow.innerHTML = cartRowContents
-  cartItems.append(cartRow)
+      </section>`;
 
-  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
+  cartRow.innerHTML = cartRowContents;
+  cartItems.append(cartRow);
+
+  cartRow
+    .getElementsByClassName("cart-quantity-input")[0]
+    .addEventListener("change", quantityChanged);
   var removeBtn;
-  removeBtn = document.getElementById("remove-btn").addEventListener("click", removeCart);
+  removeBtn = document
+    .getElementById("remove-btn")
+    .addEventListener("click", removeCart);
 }
 
-function quantityChanged () {
+function quantityChanged() {
   var quantity = document.getElementById("cart-quantity-input").value;
   var convertQuantity = parseInt(quantity);
   console.log(convertQuantity);
-
 
   var total = convertQuantity * 24.59;
   console.log(total);
 
   document.getElementById("cart-total-price").innerText = "£" + total;
+
+  if(convertQuantity < 0){
+    document.getElementById("cart-total-price").innerText = "£0";
+    alert("Please enter a valid quantity");
+  }
+
+
 }
 
-function removeCart () {
-
+function removeCart() {
   $(".sidebar").remove();
-
-
 }
-
-
