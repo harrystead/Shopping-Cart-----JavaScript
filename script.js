@@ -95,13 +95,14 @@ function addAlbumClicked (event) {
 
   //album variables.
   var button = event.target;
-  var albumItem = button.parentElement;
+  var albumItem = button.parentElement.parentElement;
   console.log(albumItem);
   var title = albumItem.getElementsByClassName("album-title")[0].innerText;
   console.log(title);
   var image = albumItem.getElementsByClassName("shop-item-image")[0].src;
   console.log(image);
   var price = albumItem.getElementsByClassName("shop-item-price")[0].innerText;
+  console.log(price);
   albumCart(title, image, price);
   console.log(price);
 }
@@ -113,24 +114,23 @@ function albumCart (title, image, price) {
   albumDiv.classList.add("album-div");
 
   var albumShopCart = `
-  <section class="album-section/>
+  <section class="album-section">
   <h2 class="section-header">CART</h2>
-  <div class="cart-item cart-column">
+  <div class="cart-item-album">
       <span class="cart-item-date">${title}</span>
-      <img class="cart-item-title" src ="${image}" width="100" height="100">
+      <img class="cart-item-title" src ="${image}" width="120" height="120">
   </div>
-  <span class="cart-price cart-column">${price}</span>
 
   <div class="cart-quantity cart-column">
-      <h6>No. of Tickets: <h6>
+      <h6>Qty: <h6>
       <input class="cart-quantity-input" id="cart-quantity-input" type="number" value="1">
   </div>
   <div class="remove-button">
-  <button class="btn btn-danger" type="button"><i id ="remove-btn" class="far fa-times"></i></button>
+  <button class="btn btn-danger" type="button"><i id ="remove-btn-two" class="far fa-times"></i></button>
   </div>
   <div class="total">
   <strong class="cart-total-title">Total</strong>
-  <span class="cart-total-price" id="cart-total-price">£24.59</span>
+  <span class="cart-total-price" id="cart-total-price">${price}</span>
   </div>
   <div class="purchase">
   <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>

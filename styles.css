@@ -269,7 +269,7 @@ body {
   margin-top: 60px;
 }
 
-.shop-item-title {
+.album-title {
   display: block;
   width: 100%;
   text-align: center;
@@ -369,3 +369,22 @@ body {
   top:-14.3rem;
   left: 5.8rem;
 }
+
+
+.album-section {
+  position: absolute;
+  top: 93rem;
+  right: 55px;
+  width: 250px;
+  height: 30.3rem;
+  background: white;
+  border: 2px solid black;
+  transition: all 300ms linear;
+}
+#remove-btn-two {
+  position: relative;
+  top: -330px;
+  left: 6.5rem;
+}
+
+
